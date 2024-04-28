@@ -13,10 +13,7 @@ export default function Home() {
     ">
       <Header>
           <div 
-          className="
-          mb-2
-          "
-          >
+          className="mb-2">
             <h1
             className="
             text-white

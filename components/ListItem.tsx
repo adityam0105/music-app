@@ -54,7 +54,8 @@ const ListItem:React.FC<ListItemProps> = ({
             <div
             className="
             absolute
-            transition opacity-0
+            transition 
+            opacity-0
             rounded-full
             flex
             items-center
