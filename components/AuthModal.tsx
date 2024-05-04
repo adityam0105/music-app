@@ -3,12 +3,11 @@
 import { useSessionContext, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
-
-import Modal from "./Modal"
 import { useRouter } from "next/navigation";
-import useAuthModel from "@/hooks/useAuthModal";
 import { useEffect } from "react";
 
+import useAuthModel from "@/hooks/useAuthModal";
+import Modal from "./Modal"
 
 const AuthModal = ()=>{
     const supabaseClient = useSupabaseClient();
@@ -44,7 +43,7 @@ const AuthModal = ()=>{
                         default:{
                             colors: {
                                 brand: '#404040',
-                                brandAccent: '#22c55e'
+                                brandAccent: '#365475'
                             }
 
                         }
