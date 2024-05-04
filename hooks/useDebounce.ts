@@ -12,6 +12,6 @@ function useDebounce<T>(value: T, delay?:number){
         }
     },[value,delay])
     return decouncedValue;
-}
+};
 
 export default useDebounce;
