@@ -1,6 +1,7 @@
 "use client";
 
 import useLoadImage from "@/hooks/useLoadImage";
+
 import { Song } from "@/types";
 import Image from "next/image";
 import PlayButton from "./PlayButton";
@@ -53,9 +54,6 @@ const SongItem: React.FC<SongItemProps> =({
                 />
             </div>
             <div className="flex flex-col items-start w-full pt-4 gap-y-1">
-                <p className="font-semibold truncate w-full">
-                    {data.title}
-                </p>
                 <p className="font-semibold truncate w-full">
                     {data.title}
                 </p>

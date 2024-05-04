@@ -19,12 +19,12 @@ const SearchInput = ()=>{
             url: '/search' ,
             query: query
         })
-    })
+    },[debouncedValue,router])
     return (
         
         <div>
             <Input 
-                placeholder="What do you want to listen to Today?"
+                placeholder="What do you want to listen to?"
                 value={value}
                 onChange={(e)=> setValue(e.target.value)}
             />

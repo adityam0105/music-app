@@ -15,12 +15,14 @@ const ListItem:React.FC<ListItemProps> = ({
     href
 }) => {
     const router= useRouter();
+
     const onClick= ()=>{
         router.push(href);
     }
   return (
     <div>
         <button
+        onClick={onClick}
         className="
         relative
         group
@@ -59,7 +61,7 @@ const ListItem:React.FC<ListItemProps> = ({
             rounded-full
             flex
             items-center
-            bg-green-500
+            bg-purple-500
             p-4
             drop-shadow-md
             right-5

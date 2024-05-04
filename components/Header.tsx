@@ -7,11 +7,12 @@ import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
 import { FaUserAlt } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 import useAuthModel from "@/hooks/useAuthModal";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useUser } from "@/hooks/useUser";
 import Button from "./Button";
+import usePlayer from "@/hooks/usePlayer";
 
 
 
@@ -25,12 +26,14 @@ const Header:React.FC<HeaderProps> = (
     children,
     className
 })=>{
+    const player= usePlayer();
     const authModel = useAuthModel();
     const router= useRouter();
     const supabaseClient = useSupabaseClient();
     const {user} = useUser();
     const handleLogout = async()=>{
         const { error } = await supabaseClient.auth.signOut();
+        player.reset();
         router.refresh();
         if(error){
            toast.error(error.message);
@@ -41,7 +44,7 @@ const Header:React.FC<HeaderProps> = (
     className={twMerge(`
         h-fit
         bg-gradient-to-b
-        from-emerald-800
+        from-[#64748b]
         p-6
 
     `,
